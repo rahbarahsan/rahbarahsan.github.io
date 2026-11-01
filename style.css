@@ -134,7 +134,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .plot .field{position:relative;height:58svh;min-height:340px;order:2}
   .intro{position:relative;transform:none;left:auto;top:auto;width:auto;padding:84px var(--gutter) 8px;order:1}
   .intro .thesis{max-width:none}
-  .rp .lb{display:none}
   .peek{left:var(--gutter)!important;right:var(--gutter);width:auto}
   .about{grid-template-columns:1fr}
   .about img{width:132px;order:-1}
@@ -216,3 +215,10 @@ footer nav a{color:var(--ink-2)}
 /* the owner's photo: a background on a block, never an <img> to save or drag */
 .me{width:260px;aspect-ratio:3/4;border-radius:14px;background:var(--ground-2) center/cover no-repeat;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 @media (max-width:820px){.me{width:min(100%,320px);order:-1}}
+
+/* every standalone link is at least 24px tall to tap */
+.links a,.elsewhere a,footer nav a,.bar nav a,.bar .mark,.more a{display:inline-block;padding:5px 0;min-height:24px}
+.next{min-height:48px}
+.papers .t a{display:inline-block;padding:3px 0;min-height:24px}
+
+@media (max-width:600px){.rp .lb{display:none}}
