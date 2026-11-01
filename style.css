@@ -66,7 +66,7 @@ h2{font:600 clamp(1.7rem,3vw,2.3rem)/1.1 var(--sans);letter-spacing:-.025em;marg
 .lede{font:400 1.15rem/1.55 var(--serif);color:var(--ink-2);max-width:var(--measure);margin:0 0 2.6em}
 
 /* about */
-.about{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:clamp(28px,5vw,72px);align-items:start}
+.about{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:clamp(28px,5vw,72px);align-items:start}
 .about p{max-width:var(--measure);margin:0 0 1em;font-size:1.15rem}
 .about img{width:200px;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:12px;filter:saturate(.85)}
 
@@ -214,5 +214,5 @@ footer nav a{color:var(--ink-2)}
 .built + .links{margin-top:18px}
 
 /* the owner's photo: a background on a block, never an <img> to save or drag */
-.me{width:220px;aspect-ratio:4/5;border-radius:14px;background:var(--ground-2) center/cover no-repeat;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-@media (max-width:820px){.me{width:150px;order:-1}}
+.me{width:260px;aspect-ratio:3/4;border-radius:14px;background:var(--ground-2) center/cover no-repeat;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+@media (max-width:820px){.me{width:min(100%,320px);order:-1}}
