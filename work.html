@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work · Rahbar Ahsan</title>
+<meta name="description" content="Every project by Rahbar Ahsan, at work, in research, in open source and on the side.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#list">Skip to the list</a>
+<header class="bar solid">
+  <a class="mark" href="index.html">Rahbar Ahsan</a>
+  <nav aria-label="Pages">
+    <a href="work.html" aria-current="page">Work</a>
+    <a class="opt" href="papers.html">Papers</a>
+    <a class="opt" href="index.html#unsung">Unsung</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<div class="pagehead"><div class="wrap">
+  <h1>Work</h1>
+  <p class="lede">Thirteen projects and a hackathon. Work for employers is described at a high level, and every project lists what it was built with.</p>
+  <div class="filters" role="group" aria-label="Show">
+    <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="work" aria-pressed="false">At work</button>
+    <button type="button" data-f="research" aria-pressed="false">Research</button>
+    <button type="button" data-f="open" aria-pressed="false">Open source</button>
+    <button type="button" data-f="side" aria-pressed="false">Side projects</button>
+    <button type="button" data-f="hack" aria-pressed="false">Hackathons</button>
+  </div>
+</div></div>
+
+<div id="list" style="padding:0 var(--gutter) clamp(72px,10vw,120px)"><div class="wrap">
+
+<section class="group" data-g="work" style="padding-left:0;padding-right:0">
+  <h2>At work</h2>
+  <article class="row" id="trust">
+    <div><h3><span class="dot" aria-hidden="true"></span>Deciding which AI models a public institution can build on</h3><p class="ctx">Federal public service · 2024 to now</p></div>
+    <div><p>One repeatable assessment every model passes before teams build on it. Provenance and licence checks, automated security scans, and red teaming for risks no public benchmark covers. What clears it lands in a catalogue teams check first.</p>
+    <p class="insight">The hardest risks to test were the ones nobody had written a benchmark for, so we wrote our own.</p>
+    <p class="stack"><b>Built with</b>Python · Promptfoo · Azure</p></div>
+  </article>
+  <article class="row" id="rag">
+    <div><h3><span class="dot" aria-hidden="true"></span>Answers from internal documents</h3><p class="ctx">Federal public service · In production</p></div>
+    <div><p>Teams needed answers buried in unstructured documents. A retrieval system with vector search, caching and versioned APIs that other teams now build on.</p>
+    <p class="insight">Passages with near-identical scores made answers change from one run to the next. A re-ranking layer made them repeatable.</p>
+    <p class="stack"><b>Built with</b>Python · Azure Cosmos DB · Redis · Cohere Rerank · REST APIs</p></div>
+  </article>
+  <article class="row" id="subtitles">
+    <div><h3><span class="dot" aria-hidden="true"></span>Live subtitles in six languages</h3><p class="ctx">Federal public service · Pilot</p></div>
+    <div><p>Speech to text, through a terminology layer, then to translation, fast enough to read along at live events full of in-house acronyms.</p>
+    <p class="insight">The models translated the words fine and got the acronyms wrong. A small terminology layer fixed what a bigger model couldn't.</p>
+    <p class="stack"><b>Built with</b>Whisper · GPT-4o on Azure OpenAI · Python</p></div>
+  </article>
+  <article class="row" id="osint">
+    <div><h3><span class="dot" aria-hidden="true"></span>Structure in a thousand unlabelled articles</h3><p class="ctx">Federal public service</p></div>
+    <div><p>Analysts received over a thousand open-source articles each cycle with no labels. Embeddings, clustering and topic modelling surfaced the groups, and a question-and-answer layer sits on top for the analysts.</p>
+    <p class="insight">Nobody had labelled anything, so the first job was letting the data show its own groups.</p>
+    <p class="stack"><b>Built with</b>Python · sentence embeddings · K-Means · topic modelling · Redis</p></div>
+  </article>
+  <article class="row" id="tests">
+    <div><h3><span class="dot" aria-hidden="true"></span>Test cases that learn from the engineers who keep them</h3><p class="ctx">A Canadian bank · 2022 to 2024</p></div>
+    <div><p>A system that reads the input, predicts the expected output and drafts the test, then learns from what engineers accept. It runs inside the delivery pipeline and became the standard across the organisation.</p>
+    <p class="insight">Engineers trusted it once it learned from their own edits, not before.</p>
+    <p class="stack"><b>Built with</b>scikit-learn · TensorFlow · Databricks</p></div>
+  </article>
+  <article class="row" id="validation">
+    <div><h3><span class="dot" aria-hidden="true"></span>Validating large financial datasets, faster</h3><p class="ctx">A Canadian bank · 2022 to 2024</p></div>
+    <div><p>Validation pipelines and a comparison tool for large financial datasets, adopted as the standard by two engineering teams. Alongside it, a framework that probed production models for prompt injection and shifts in the data.</p>
+    <p class="stack"><b>Built with</b>SQL · Spark · Databricks · Python</p></div>
+  </article>
+</section>
+
+<section class="group" data-g="research" style="padding-left:0;padding-right:0">
+  <h2>Research</h2>
+  <article class="row" id="rare">
+    <div><h3><span class="dot" aria-hidden="true"></span>Finding rare attacks in network traffic</h3><p class="ctx">Carleton University · 2021 · First author</p></div>
+    <div><p>The rarest attack class has 52 training records out of almost 126,000. I compared classical models and neural networks across resampling methods, judged by weighted F1 instead of accuracy.</p>
+    <p class="insight">A high accuracy score said almost nothing about the attacks we cared about.</p>
+    <p class="stack"><b>Built with</b>scikit-learn · Keras · imbalanced-learn</p>
+    <p class="links"><a href="https://doi.org/10.1049/cps2.12013">Read the paper</a></p></div>
+  </article>
+  <article class="row" id="cgan">
+    <div><h3><span class="dot" aria-hidden="true"></span>Teaching a GAN to make more of the rare class</h3><p class="ctx">Carleton University · 2021 · First author</p></div>
+    <div><p>AEGAN pairs a reinforcement learning environment with a conditional GAN that generates realistic minority samples. Impersonation attacks were labelled correctly 72% of the time, up from 36%.</p>
+    <p class="insight">The rare class stopped being read as normal once the model had seen enough believable versions of it.</p>
+    <p class="stack"><b>Built with</b>TensorFlow · Keras · Q-learning</p>
+    <p class="links"><a href="https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/cps2.12019">Read the paper</a></p></div>
+  </article>
+  <article class="row" id="homeroom">
+    <div><h3><span class="dot" aria-hidden="true"></span>Homeroom, teaching small models on a fixed budget</h3><p class="ctx">2026 · In progress, not yet published</p></div>
+    <div><p>A teacher model builds an exam, diagnoses a small student's errors and writes targeted examples, with a budget check, cache and cost ledger on every request.</p>
+    <p class="insight">So far the adaptive teacher has not beaten plain bulk generation, though it used about 57% fewer training examples. The negative results are published with the code.</p>
+    <p class="stack"><b>Built with</b>Python · SetFit · Qwen3-0.6B · pytest</p>
+    <p class="links"><a href="https://github.com/rahbarahsan/Homeroom">Code and results</a></p></div>
+  </article>
+  <article class="row" id="ocean">
+    <div><h3><span class="dot" aria-hidden="true"></span>Replacing hand labelling of ocean sensor data</h3><p class="ctx">Carleton University · Research assistant</p></div>
+    <div><p>Experts used to flag corrupted oceanographic sensor readings by hand. A gradient boosted model learned to do it, matching their accuracy and cutting manual labelling by 90%.</p>
+    <p class="insight">The experts' old labels were the training data. Their judgment didn't go away, it scaled.</p>
+    <p class="stack"><b>Built with</b>XGBoost · scikit-learn · pandas</p></div>
+  </article>
+</section>
+
+<section class="group" data-g="open" style="padding-left:0;padding-right:0">
+  <h2>Open source</h2>
+  <article class="row" id="rally">
+    <div><h3><span class="dot" aria-hidden="true"></span>Rally, a squash game in the browser</h3><p class="ctx">2026 · Solo</p></div>
+    <div><p>A procedural 3D glass court, players animated in Blender, a shot planner that previews the bounce, and an AI opponent with three levels. Plays on phones with touch controls.</p>
+    <p class="insight">Making the AI beatable was harder than making it good.</p>
+    <p class="stack"><b>Built with</b>JavaScript · three.js · Blender · Playwright</p>
+    <p class="links"><a href="https://github.com/rahbarahsan/Rally-Squash-Club">Code on GitHub</a><a href="https://rally-squash-rahbar.rahbar916.chatgpt.site">Play it (request access there)</a></p></div>
+  </article>
+  <article class="row" id="forkcast">
+    <div><h3><span class="dot" aria-hidden="true"></span>Forkcast, meal planning from what's in the pantry</h3><p class="ctx">2026 · Solo</p></div>
+    <div><p>Plan meals, use the pantry, and turn recipes into one shopping list priced against this week's flyers. Runs locally. AI imports recipes from videos, reads pantry notes and flyers, and drafts plans for review.</p>
+    <p class="insight">The AI never changes anything on its own. Nothing happens until you press Apply.</p>
+    <p class="stack"><b>Built with</b>Python · FastAPI · LangGraph · SQLite · React Native with Expo · TypeScript</p>
+    <p class="links"><a href="https://github.com/rahbarahsan/Forkcast">Code and demo video</a></p></div>
+  </article>
+</section>
+
+<section class="group" data-g="side" style="padding-left:0;padding-right:0">
+  <h2>Side projects</h2>
+  <article class="row" id="scout">
+    <div><h3><span class="dot" aria-hidden="true"></span>A fantasy football scout with a second opinion</h3><p class="ctx">2026 · Solo</p></div>
+    <div><p>Claude and Gemini sit behind one interface and each weighs in on a lineup with start, risk or bench. Mostly an excuse to learn agent design on something I care about every matchweek.</p>
+    <p class="insight">Nobody has checked its verdicts against real results yet, including me.</p>
+    <p class="stack"><b>Built with</b>Python · FastAPI · Pydantic · React · TypeScript · Docker · Playwright</p>
+    <p class="links"><a href="https://github.com/rahbarahsan/ucl-fantasy-scout">Code on GitHub</a></p></div>
+  </article>
+</section>
+
+<section class="group" data-g="hack" style="padding-left:0;padding-right:0">
+  <h2>Hackathons</h2>
+  <article class="row" id="maple">
+    <div><h3><span class="dot" aria-hidden="true"></span>Checking "Made in Canada" claims with signed supply chains</h3><p class="ctx">Red Team DefTech Hackathon · Ottawa · May 2026 · Third place, team Maple Stamp</p></div>
+    <div><p>The Verified Canadian Supply Chains challenge. Buy Canadian claims for defence purchases rest on suppliers' word. Our prototype makes every supplier step a signed record, checks the whole chain for forged, tampered or replayed records, and works out the product's Canadian content. A purchaser scans a QR code and sees verified or review required.</p>
+    <p>I built the verification backend, the system behind the 95.7% score on the organisers' 1,000-chain test. The team framed the problem and built the interface.</p>
+    <p class="insight">The cryptography catches forgeries. The hard cases were honest-looking records with numbers that didn't add up.</p>
+    <p class="stack"><b>Built with</b>Python · FastAPI · Ed25519 signatures · React · TypeScript · Docker</p>
+    <p class="links"><a href="https://github.com/rahbarahsan/Red-Team-Hackathon">Code on GitHub</a><a href="https://redteamhack.ca/winners">The winners list</a></p>
+    <figure class="ushot" style="margin-top:18px;max-width:480px"><img src="img/maple-stamp.webp" alt="The prototype's purchaser screen. Provenance verified, 58.4% Canadian content, Made in Canada, 12 of 12 records verified." width="640" height="500" loading="lazy" style="border-color:var(--rule)"><figcaption style="color:var(--ink-3)">The purchaser view on the organisers' example drone chain. A hackathon prototype, not a government service.</figcaption></figure></div>
+  </article>
+</section>
+
+</div></div>
+</main>
+<footer><div class="wrap"><span>Rahbar Ahsan, Toronto</span><nav aria-label="Pages"><a href="index.html">Home</a><a href="work.html">Work</a><a href="papers.html">Papers</a></nav><span>Views here are my own.</span></div></footer>
+<script>
+(() => {
+  // filters show one group at a time; the address keeps the choice so a link can point straight at it
+  const btns=[...document.querySelectorAll(".filters button")], groups=[...document.querySelectorAll(".group")];
+  function set(f){
+    btns.forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.f===f)));
+    groups.forEach(g=>g.hidden = f!=="all" && g.dataset.g!==f);
+  }
+  btns.forEach(b=>b.addEventListener("click",()=>{ set(b.dataset.f); history.replaceState(null,"",b.dataset.f==="all"?location.pathname:"?show="+b.dataset.f); }));
+  const q=new URLSearchParams(location.search).get("show"); if(q && btns.some(b=>b.dataset.f===q)) set(q);
+  if(location.hash){ const el=document.querySelector(location.hash); if(el){ el.classList.add("flash"); } }
+})();
+</script>
+<script src="stack.js"></script>
+</body>
+</html>
