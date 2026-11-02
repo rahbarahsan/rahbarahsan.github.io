@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <a class="skip" href="#list">Skip to the list</a>
@@ -17,7 +17,7 @@
   <nav aria-label="Pages">
     <a href="work.html" aria-current="page">Work</a>
     <a class="opt" href="papers.html">Papers</a>
-    <a class="opt" href="index.html#unsung">Unsung</a>
+    <a class="opt" href="work.html#projects">Projects</a>
     <a href="index.html#contact">Contact</a>
   </nav>
 </header>
@@ -25,7 +25,7 @@
 <main>
 <div class="pagehead"><div class="wrap">
   <h1>Work</h1>
-  <p class="lede">Thirteen projects and a hackathon. Work for employers is described at a high level, and every project lists what it was built with.</p>
+  <p class="lede">Fourteen projects and a hackathon. Work for employers is described at a high level, and every project lists what it was built with.</p>
   <div class="filters" role="group" aria-label="Show">
     <button type="button" data-f="all" aria-pressed="true">All</button>
     <button type="button" data-f="work" aria-pressed="false">At work</button>
@@ -43,26 +43,32 @@
   <article class="row" id="trust">
     <div><h3><span class="dot" aria-hidden="true"></span>Deciding which AI models a public institution can build on</h3><p class="ctx">Federal public service · 2024 to now</p></div>
     <div><p>One repeatable assessment every model passes before teams build on it. Provenance and licence checks, automated security scans, and red teaming for risks no public benchmark covers. What clears it lands in a catalogue teams check first.</p>
-    <p class="insight">The hardest risks to test were the ones nobody had written a benchmark for, so we wrote our own.</p>
+    <p class="insight">Sovereignty had no public benchmark, so I designed our own question set. Defining its rubrics with the subject matter expert was the hardest part.</p>
     <p class="stack"><b>Built with</b>Python · Promptfoo · Azure</p></div>
+  </article>
+  <article class="row" id="metadata">
+    <div><h3><span class="dot" aria-hidden="true"></span>Agents that collect the facts on every open source model</h3><p class="ctx">Federal public service · 2024 to now</p></div>
+    <div><p>Before a model from Hugging Face or Ollama is assessed, an agentic layer fills 28 metadata fields for it, including licence, provenance, training data and known vulnerabilities. That metadata is checked against the AI policy. It decides which security checks apply and helps us set the model's risk profile and the mitigation guidance teams follow.</p>
+    <p class="insight">Assessment needs evidence before anyone looks at a model, so the agents gather it first. Agent profiles were A/B tested on a held out set, and only the best one was promoted.</p>
+    <p class="stack"><b>Built with</b>Azure AI Foundry Agents · LangChain Deep Agents</p></div>
   </article>
   <article class="row" id="rag">
     <div><h3><span class="dot" aria-hidden="true"></span>Answers from internal documents</h3><p class="ctx">Federal public service · In production</p></div>
     <div><p>Teams needed answers buried in unstructured documents. A retrieval system with vector search, caching and versioned APIs that other teams now build on.</p>
-    <p class="insight">Passages with near-identical scores made answers change from one run to the next. A re-ranking layer made them repeatable.</p>
+    <p class="insight">Chunks with near-identical scores were picked at random, so evaluation runs could not be repeated. A re-ranking layer raised context relevance by 20% and made them reproducible.</p>
     <p class="stack"><b>Built with</b>Python · Azure Cosmos DB · Redis · Cohere Rerank · REST APIs</p></div>
   </article>
   <article class="row" id="subtitles">
     <div><h3><span class="dot" aria-hidden="true"></span>Live subtitles in six languages</h3><p class="ctx">Federal public service · Pilot</p></div>
-    <div><p>Speech to text, through a terminology layer, then to translation, fast enough to read along at live events full of in-house acronyms.</p>
-    <p class="insight">The models translated the words fine and got the acronyms wrong. A small terminology layer fixed what a bigger model couldn't.</p>
+    <div><p>A speech to translation pipeline on Whisper and GPT-4o for live events full of in-house acronyms. It is in pilot as live subtitles.</p>
+    <p class="insight">Public models do not know our internal acronyms, so a terminology layer swaps in more than 40 of them.</p>
     <p class="stack"><b>Built with</b>Whisper · GPT-4o on Azure OpenAI · Python</p></div>
   </article>
   <article class="row" id="osint">
     <div><h3><span class="dot" aria-hidden="true"></span>Structure in a thousand unlabelled articles</h3><p class="ctx">Federal public service</p></div>
     <div><p>Analysts received over a thousand open-source articles each cycle with no labels. Embeddings, clustering and topic modelling surfaced the groups, and a question-and-answer layer sits on top for the analysts.</p>
     <p class="insight">Nobody had labelled anything, so the first job was letting the data show its own groups.</p>
-    <p class="stack"><b>Built with</b>Python · sentence embeddings · K-Means · topic modelling · Redis</p></div>
+    <p class="stack"><b>Built with</b>Python · embeddings · K-Means · topic modelling · Redis</p></div>
   </article>
   <article class="row" id="tests">
     <div><h3><span class="dot" aria-hidden="true"></span>Test cases that learn from the engineers who keep them</h3><p class="ctx">A Canadian bank · 2022 to 2024</p></div>
@@ -73,7 +79,7 @@
   <article class="row" id="validation">
     <div><h3><span class="dot" aria-hidden="true"></span>Validating large financial datasets, faster</h3><p class="ctx">A Canadian bank · 2022 to 2024</p></div>
     <div><p>Validation pipelines and a comparison tool for large financial datasets, adopted as the standard by two engineering teams. Alongside it, a framework that probed production models for prompt injection and shifts in the data.</p>
-    <p class="stack"><b>Built with</b>SQL · Spark · Databricks · Python</p></div>
+    <p class="stack"><b>Built with</b>SQL · Spark · Databricks</p></div>
   </article>
 </section>
 
@@ -82,15 +88,15 @@
   <article class="row" id="rare">
     <div><h3><span class="dot" aria-hidden="true"></span>Finding rare attacks in network traffic</h3><p class="ctx">Carleton University · 2021 · First author</p></div>
     <div><p>The rarest attack class has 52 training records out of almost 126,000. I compared classical models and neural networks across resampling methods, judged by weighted F1 instead of accuracy.</p>
-    <p class="insight">A high accuracy score said almost nothing about the attacks we cared about.</p>
-    <p class="stack"><b>Built with</b>scikit-learn · Keras · imbalanced-learn</p>
+    <p class="insight">Accuracy hid how badly single models did on the rare attacks, because normal traffic dominates.</p>
+    <p class="stack"><b>Built with</b>Python · scikit-learn · Keras</p>
     <p class="links"><a href="https://doi.org/10.1049/cps2.12013">Read the paper</a></p></div>
   </article>
   <article class="row" id="cgan">
     <div><h3><span class="dot" aria-hidden="true"></span>Teaching a GAN to make more of the rare class</h3><p class="ctx">Carleton University · 2021 · First author</p></div>
-    <div><p>AEGAN pairs a reinforcement learning environment with a conditional GAN that generates realistic minority samples. Impersonation attacks were labelled correctly 72% of the time, up from 36%.</p>
-    <p class="insight">The rare class stopped being read as normal once the model had seen enough believable versions of it.</p>
-    <p class="stack"><b>Built with</b>TensorFlow · Keras · Q-learning</p>
+    <div><p>AEGAN combines adversarial environment reinforcement learning with a conditional GAN that generates synthetic minority samples. Impersonation attacks were labelled correctly 72% of the time, up from 36%.</p>
+    <p class="insight">Impersonation attacks read as normal traffic fell from 64% to 27%.</p>
+    <p class="stack"><b>Built with</b>Python · Keras · Q-learning</p>
     <p class="links"><a href="https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/cps2.12019">Read the paper</a></p></div>
   </article>
   <article class="row" id="homeroom">
@@ -102,13 +108,13 @@
   </article>
   <article class="row" id="ocean">
     <div><h3><span class="dot" aria-hidden="true"></span>Replacing hand labelling of ocean sensor data</h3><p class="ctx">Carleton University · Research assistant</p></div>
-    <div><p>Experts used to flag corrupted oceanographic sensor readings by hand. A gradient boosted model learned to do it, matching their accuracy and cutting manual labelling by 90%.</p>
-    <p class="insight">The experts' old labels were the training data. Their judgment didn't go away, it scaled.</p>
-    <p class="stack"><b>Built with</b>XGBoost · scikit-learn · pandas</p></div>
+    <div><p>Experts used to flag corrupted oceanographic sensor readings by hand. I built an automated labelling framework, compared six model types, and matched their accuracy while cutting manual labelling by 90%.</p>
+    <p class="insight">The research team then checked sensor health through trend analyses I validated with stakeholders.</p>
+    <p class="stack"><b>Built with</b>XGBoost · scikit-learn · Matplotlib</p></div>
   </article>
 </section>
 
-<section class="group" data-g="open" style="padding-left:0;padding-right:0">
+<section class="group" id="projects" data-g="open" style="padding-left:0;padding-right:0">
   <h2>Open source</h2>
   <article class="row" id="rally">
     <div><h3><span class="dot" aria-hidden="true"></span>Rally, a squash game in the browser</h3><p class="ctx">2026 · Solo</p></div>
@@ -129,8 +135,8 @@
 <section class="group" data-g="side" style="padding-left:0;padding-right:0">
   <h2>Side projects</h2>
   <article class="row" id="scout">
-    <div><h3><span class="dot" aria-hidden="true"></span>A fantasy football scout with a second opinion</h3><p class="ctx">2026 · Solo</p></div>
-    <div><p>Claude and Gemini sit behind one interface and each weighs in on a lineup with start, risk or bench. Mostly an excuse to learn agent design on something I care about every matchweek.</p>
+    <div><h3><span class="dot" aria-hidden="true"></span>A fantasy football scout built from eight agents</h3><p class="ctx">2026 · Solo</p></div>
+    <div><p>Eight agents run in order, from parsing the squad to fixtures, form, stats, a verdict and transfer suggestions. Claude and Gemini sit behind one interface, and the user picks which one runs.</p>
     <p class="insight">Nobody has checked its verdicts against real results yet, including me.</p>
     <p class="stack"><b>Built with</b>Python · FastAPI · Pydantic · React · TypeScript · Docker · Playwright</p>
     <p class="links"><a href="https://github.com/rahbarahsan/ucl-fantasy-scout">Code on GitHub</a></p></div>
@@ -140,10 +146,10 @@
 <section class="group" data-g="hack" style="padding-left:0;padding-right:0">
   <h2>Hackathons</h2>
   <article class="row" id="maple">
-    <div><h3><span class="dot" aria-hidden="true"></span>Checking "Made in Canada" claims with signed supply chains</h3><p class="ctx">Red Team DefTech Hackathon · Ottawa · May 2026 · Third place, team Maple Stamp</p></div>
-    <div><p>The Verified Canadian Supply Chains challenge. Buy Canadian claims for defence purchases rest on suppliers' word. Our prototype makes every supplier step a signed record, checks the whole chain for forged, tampered or replayed records, and works out the product's Canadian content. A purchaser scans a QR code and sees verified or review required.</p>
-    <p>I built the verification backend, the system behind the 95.7% score on the organisers' 1,000-chain test. The team framed the problem and built the interface.</p>
-    <p class="insight">The cryptography catches forgeries. The hard cases were honest-looking records with numbers that didn't add up.</p>
+    <div><h3><span class="dot" aria-hidden="true"></span>Checking "Made in Canada" claims with signed supply chains</h3><p class="ctx">Red Team DefTech Hackathon · Ottawa · May 2026 · One of three third-place teams of ten, team Maple Stamp</p></div>
+    <div><p>The Verified Canadian Supply Chains challenge. Buy Canadian claims for defence purchases rest on suppliers' word. Our prototype makes every supplier step a signed record, checks the whole chain for forged, tampered or replayed records, and works out the product's Canadian content.</p>
+    <p>I built the verification backend, which scored 95.7% on the organisers' self-test over the 1,000 training chains. The team framed the problem and built the interface.</p>
+    <p class="insight">Every forgery and tamper type was caught. The statistical checks on cost, labour and timing scored lower.</p>
     <p class="stack"><b>Built with</b>Python · FastAPI · Ed25519 signatures · React · TypeScript · Docker</p>
     <p class="links"><a href="https://github.com/rahbarahsan/Red-Team-Hackathon">Code on GitHub</a><a href="https://redteamhack.ca/winners">The winners list</a></p>
     <figure class="ushot" style="margin-top:18px;max-width:480px"><img src="img/maple-stamp.webp" alt="The prototype's purchaser screen. Provenance verified, 58.4% Canadian content, Made in Canada, 12 of 12 records verified." width="640" height="500" loading="lazy" style="border-color:var(--rule)"><figcaption style="color:var(--ink-3)">The purchaser view on the organisers' example drone chain. A hackathon prototype, not a government service.</figcaption></figure></div>
@@ -166,6 +172,6 @@
   if(location.hash){ const el=document.querySelector(location.hash); if(el){ el.classList.add("flash"); } }
 })();
 </script>
-<script src="stack.js"></script>
+<script src="stack.js?v=2"></script>
 </body>
 </html>

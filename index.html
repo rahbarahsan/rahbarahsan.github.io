@@ -9,17 +9,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <a class="skip" href="#work">Skip to the work</a>
 
 <header class="bar">
-  <a class="mark" href="index.html">Rahbar Ahsan</a>
   <nav aria-label="Pages">
     <a href="work.html">Work</a>
     <a class="opt" href="papers.html">Papers</a>
-    <a class="opt" href="#unsung">Unsung</a>
+    <a class="opt" href="work.html#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -29,7 +28,7 @@
   <div class="intro">
     <h1>Rahbar Ahsan</h1>
     <p class="thesis">Models are good at the common case. I work on <em>the&nbsp;rare&nbsp;one</em>.</p>
-    <p class="now">Machine learning engineer in Toronto. Today I help a federal department decide which AI models it can trust. Before that, I contributed to cloud data validation in the banking sector, and to research at Carleton's AI lab on machine learning for imbalanced data, where the class that matters is the rare one.</p>
+    <p class="now">Machine learning engineer in Toronto. Today I help a federal department decide which AI models it can trust. Before that, I built machine learning and data validation systems at a Canadian bank. My research at Carleton University was on machine learning for imbalanced data, where the class that matters is the rare one.</p>
     <p class="hint"><span class="dot" aria-hidden="true"></span>The blue points are things I've built. Pick one.</p>
   </div>
   <div class="field" id="field">
@@ -52,11 +51,11 @@
 <section id="work">
   <div class="wrap">
     <h2>Selected work</h2>
-    <p class="lede">Six of thirteen projects, from research to open source. Work done for employers is described at a high level.</p>
+    <p class="lede">Six of fourteen projects, from research to open source. Work done for employers is described at a high level.</p>
 
     <article class="entry" id="trust">
       <div class="fig">
-        <svg viewBox="0 0 420 210" role="img" aria-label="A model passes provenance and licence checks, security scans and red teaming before entering the catalogue">
+        <svg viewBox="0 64 420 90" role="img" aria-label="A model passes provenance and licence checks, security scans and red teaming before entering the catalogue">
           <g font-family="Schibsted Grotesk, sans-serif" font-size="13" fill="#121519">
             <circle cx="22" cy="105" r="9" fill="#9CA3A0"/>
             <text x="22" y="138" text-anchor="middle" fill="#4E555D">model</text>
@@ -69,8 +68,6 @@
             <text x="311" y="101" text-anchor="middle">red</text><text x="311" y="118" text-anchor="middle">teaming</text>
             <circle cx="398" cy="105" r="11" fill="#2537D9"/>
             <text x="398" y="138" text-anchor="middle" fill="#1A2AB8">catalogue</text>
-            <path d="M311 130 v34 h-40" fill="none" stroke="#9CA3A0" stroke-dasharray="3 4"/>
-            <text x="264" y="168" text-anchor="end" fill="#737A82" font-size="12">or sent back with the reason</text>
           </g>
         </svg>
         <p class="cap">The path every model takes before teams can build on it.</p>
@@ -79,23 +76,35 @@
         <p class="ctx"><span class="dot" aria-hidden="true"></span>At work · Federal public service · 2024 to now</p>
         <h3>Deciding which AI models a public institution can build on</h3>
         <p>Before a team builds on a model, it now goes through one repeatable assessment. Provenance and licence checks, automated security scans, and red teaming that includes risks no public benchmark covers. What clears it lands in a catalogue teams check first.</p>
-        <p class="insight">The hardest risks to test were the ones nobody had written a benchmark for, so we wrote our own.</p>
+        <p class="insight">Sovereignty had no public benchmark, so I designed our own question set. Defining its rubrics with the subject matter expert was the hardest part.</p>
         <p class="stack"><b>Built with</b>Python · Promptfoo · Azure</p>
       </div>
     </article>
 
-    <article class="entry" id="homeroom">
-      <div class="fig shot" style="background:#fff">
-        <img src="img/homeroom.webp" alt="Chart of held-out accuracy against estimated teacher cost on Banking77 over three seeds. Real few-shot about 84.1%, adaptive classroom about 85.2%, bulk generation about 85.5%." width="1440" height="954" loading="lazy">
-        <p class="cap">Banking77, three seeds. The adaptive teacher did not beat bulk generation, and the study says so.</p>
+    <article class="entry" id="metadata">
+      <div class="fig">
+        <svg viewBox="0 0 420 210" role="img" aria-label="An open source model goes to agents that fill 28 metadata fields. The metadata is checked against the AI policy and leads to a risk profile and a mitigation guide.">
+          <g font-family="Schibsted Grotesk, sans-serif" font-size="13" fill="#121519">
+            <circle cx="22" cy="105" r="9" fill="#9CA3A0"/>
+            <text x="22" y="138" text-anchor="middle" fill="#4E555D">model</text>
+            <line x1="36" y1="105" x2="250" y2="105" stroke="#D5D9D4" stroke-width="2"/>
+            <rect x="58" y="80" width="88" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+            <text x="102" y="101" text-anchor="middle">agents fill</text><text x="102" y="118" text-anchor="middle">28 fields</text>
+            <rect x="158" y="80" width="108" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+            <text x="212" y="101" text-anchor="middle">checked against</text><text x="212" y="118" text-anchor="middle">the AI policy</text>
+            <path d="M266 105 h10 v-40 h12 M276 105 v40 h12" fill="none" stroke="#D5D9D4" stroke-width="2"/>
+            <circle cx="298" cy="65" r="9" fill="#2537D9"/><text x="314" y="70" fill="#1A2AB8">risk profile</text>
+            <circle cx="298" cy="145" r="9" fill="#2537D9"/><text x="314" y="150" fill="#1A2AB8">mitigation guide</text>
+          </g>
+        </svg>
+        <p class="cap">Licence, provenance, training data and known vulnerabilities, collected before a person reviews the model.</p>
       </div>
       <div class="body">
-        <p class="ctx"><span class="dot" aria-hidden="true"></span>Research in progress · 2026 · Not yet published</p>
-        <h3>Homeroom, teaching small models on a fixed budget</h3>
-        <p>A teacher model builds an exam, diagnoses where a small student model goes wrong, and writes targeted examples for it, with every request passing a budget check, a cache and a cost ledger. The question is whether a small model can learn reusable rules from a few dozen examples.</p>
-        <p class="insight">So far the adaptive teacher has not beaten plain bulk generation, though it used about 57% fewer training examples. The negative results are published with the code.</p>
-        <p class="stack"><b>Built with</b>Python · SetFit · Qwen3-0.6B · pytest</p>
-        <p class="links"><a href="https://github.com/rahbarahsan/Homeroom">Code and results</a></p>
+        <p class="ctx"><span class="dot" aria-hidden="true"></span>At work · Federal public service · 2024 to now</p>
+        <h3>Agents that collect the facts on every open source model</h3>
+        <p>Before a model from Hugging Face or Ollama is assessed, an agentic layer fills 28 metadata fields for it, including licence, provenance, training data and known vulnerabilities. That metadata is checked against the AI policy. It decides which security checks apply and helps us set the model's risk profile and the mitigation guidance teams follow.</p>
+        <p class="insight">Assessment needs evidence before anyone looks at a model, so the agents gather it first. Agent profiles were A/B tested on a held out set, and only the best one was promoted.</p>
+        <p class="stack"><b>Built with</b>Azure AI Foundry Agents · LangChain Deep Agents</p>
       </div>
     </article>
 
@@ -116,10 +125,10 @@
 
     <article class="entry" id="rare">
       <div class="fig">
-        <svg viewBox="0 0 420 200" role="img" aria-label="Training records per class in NSL-KDD. Normal 67,343. DoS 45,927. Probe 11,656. R2L 995. U2R 52.">
+        <svg viewBox="0 0 420 200" role="img" aria-label="Training records per class in NSL-KDD. Normal 67,343. DoS 45,928. Probe 11,656. R2L 995. U2R 52.">
           <g font-family="Schibsted Grotesk, sans-serif" font-size="13" fill="#4E555D">
             <text x="0" y="24">Normal</text><rect x="64" y="12" width="300" height="16" rx="3" fill="#9CA3A0"/><text x="372" y="25" fill="#121519">67,343</text>
-            <text x="0" y="62">DoS</text><rect x="64" y="50" width="204.6" height="16" rx="3" fill="#9CA3A0"/><text x="276" y="63" fill="#121519">45,927</text>
+            <text x="0" y="62">DoS</text><rect x="64" y="50" width="204.6" height="16" rx="3" fill="#9CA3A0"/><text x="276" y="63" fill="#121519">45,928</text>
             <text x="0" y="100">Probe</text><rect x="64" y="88" width="51.9" height="16" rx="3" fill="#9CA3A0"/><text x="124" y="101" fill="#121519">11,656</text>
             <text x="0" y="138">R2L</text><rect x="64" y="126" width="4.4" height="16" rx="1" fill="#2537D9"/><text x="76" y="139" fill="#121519">995</text>
             <text x="0" y="176">U2R</text><rect x="64" y="164" width="1.5" height="16" fill="#2537D9"/><text x="74" y="177" fill="#1A2AB8" font-weight="600">52</text>
@@ -130,9 +139,9 @@
       <div class="body">
         <p class="ctx"><span class="dot" aria-hidden="true"></span>Research · Carleton University · 2021 · First author</p>
         <h3>Finding rare attacks in network traffic</h3>
-        <p>In the standard intrusion dataset the rarest attack class has 52 training records out of almost 126,000. I compared classical models and neural networks across resampling methods, and judged every version by weighted F1 instead of accuracy. A follow-up paper generated new rare samples with a conditional GAN.</p>
-        <p class="insight">A high accuracy score said almost nothing about the attacks we cared about.</p>
-        <p class="stack"><b>Built with</b>scikit-learn · Keras · imbalanced-learn</p>
+        <p>In the standard intrusion dataset the rarest attack class has 52 training records out of almost 126,000. I compared classical models and neural networks across resampling methods, and judged every version by weighted F1 instead of accuracy. A second paper tested conditional GAN oversampling on another dataset, and my thesis found it does not help classes this small.</p>
+        <p class="insight">Accuracy hid how badly single models did on the rare attacks, because normal traffic dominates.</p>
+        <p class="stack"><b>Built with</b>Python · scikit-learn · Keras</p>
         <p class="links"><a href="https://doi.org/10.1049/cps2.12013">Read the paper</a><a href="work.html#cgan">The GAN follow-up</a></p>
       </div>
     </article>
@@ -149,8 +158,8 @@
       <div class="body">
         <p class="ctx"><span class="dot" aria-hidden="true"></span>At work · Federal public service · Pilot</p>
         <h3>Live subtitles in six languages</h3>
-        <p>Live events needed subtitles in several languages, full of in-house acronyms that public models have never seen. Speech goes to text, through a terminology layer, then to translation, fast enough to read along.</p>
-        <p class="insight">The models translated the words fine and got the acronyms wrong. A small terminology layer fixed what a bigger model couldn't.</p>
+        <p>Live events needed subtitles in several languages, full of in-house acronyms that public models have never seen. A speech to translation pipeline on Whisper and GPT-4o handles it, with a terminology layer for the acronyms. It is in pilot as live subtitles.</p>
+        <p class="insight">Public models do not know our internal acronyms, so a terminology layer swaps in more than 40 of them.</p>
         <p class="stack"><b>Built with</b>Whisper · GPT-4o on Azure OpenAI · Python</p>
       </div>
     </article>
@@ -170,41 +179,74 @@
       </div>
     </article>
 
-    <a class="next" href="work.html"><span class="t">All work</span><span class="s">Thirteen projects and a hackathon, with filters for work, research, open source and side projects.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="next" href="work.html"><span class="t">All work</span><span class="s">Fourteen projects and a hackathon, with filters for work, research, open source and side projects.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
-<section class="unsung" id="unsung">
+<section class="unsung u2" id="unsung">
   <div class="wrap">
     <h2>Unsung, what I'm building now</h2>
     <p class="lede">Most people have done far more than their CV says. Unsung helps them say it, on their own laptop and with their own AI.</p>
-    <figure class="ushot">
-      <img src="img/unsung-graph.webp" alt="Unsung's knowledge graph. About ninety stories cluster around jobs, projects and papers, linked by skills, with the applications that used them in the middle." width="1600" height="1196" loading="lazy">
-      <figcaption>The knowledge graph in Unsung Career, shown with a made-up profile. Every story, job and paper here is invented.</figcaption>
-    </figure>
     <div class="pair">
-      <div>
-        <h3><span class="dot" aria-hidden="true"></span>Unsung Career, for people</h3>
-        <p>A career assistant that keeps every story of your work and turns it into applications that still sound like you.</p>
+      <article class="ucard">
+        <div class="fig">
+          <svg viewBox="0 32 420 136" role="img" aria-label="Your stories go into a story bank, then a fit check, then a CV tailored to the job, ending in an application that still sounds like you. It runs on your own laptop.">
+            <g font-family="Schibsted Grotesk, sans-serif" font-size="13" fill="#121519">
+              <circle cx="22" cy="70" r="9" fill="#9CA3A0"/>
+              <text x="22" y="103" text-anchor="middle" fill="#4E555D">your</text><text x="22" y="119" text-anchor="middle" fill="#4E555D">stories</text>
+              <line x1="36" y1="70" x2="376" y2="70" stroke="#D5D9D4" stroke-width="2"/>
+              <rect x="56" y="45" width="98" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+              <text x="105" y="66" text-anchor="middle">story</text><text x="105" y="83" text-anchor="middle">bank</text>
+              <rect x="162" y="45" width="98" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+              <text x="211" y="66" text-anchor="middle">honest</text><text x="211" y="83" text-anchor="middle">fit check</text>
+              <rect x="268" y="45" width="98" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+              <text x="317" y="66" text-anchor="middle">tailored</text><text x="317" y="83" text-anchor="middle">CV</text>
+              <circle cx="398" cy="70" r="11" fill="#2537D9"/>
+              <text x="398" y="118" text-anchor="end" fill="#1A2AB8">application</text>
+              <rect x="56" y="134" width="310" height="26" rx="13" fill="none" stroke="#C9CEEB" stroke-dasharray="3 4"/>
+              <text x="211" y="151" text-anchor="middle" fill="#4E555D" font-size="12">on your laptop, with your own Claude Code or Codex</text>
+            </g>
+          </svg>
+        </div>
+        <p class="ctx"><span class="dot" aria-hidden="true"></span>For people · In private testing with friends</p>
+        <h3>Unsung Career</h3>
+        <p>Keeps every story of your work and turns it into applications that still sound like you.</p>
         <ul>
           <li>A story bank that remembers every way you've told a story</li>
           <li>An honest fit check before you spend an evening applying</li>
           <li>CVs tailored to each job, built only from your own stories</li>
           <li>An assistant you can hand files and questions to</li>
-          <li>Runs on your laptop with your own Claude Code or Codex</li>
         </ul>
-        <p class="soon">In private testing with friends</p>
-      </div>
-      <div>
-        <h3><span class="dot" aria-hidden="true"></span>Unsung Teams, for organisations</h3>
-        <p>The other side of the table. Find the person whose stories fit the role, not just the keywords on the page.</p>
+      </article>
+      <article class="ucard">
+        <div class="fig">
+          <svg viewBox="0 32 420 136" role="img" aria-label="A role is described as the work, candidates are matched on what they have done, and a person reviews every step before reaching the person who fits.">
+            <g font-family="Schibsted Grotesk, sans-serif" font-size="13" fill="#121519">
+              <circle cx="22" cy="70" r="9" fill="#9CA3A0"/>
+              <text x="22" y="103" text-anchor="middle" fill="#4E555D">a role</text>
+              <line x1="36" y1="70" x2="376" y2="70" stroke="#D5D9D4" stroke-width="2"/>
+              <rect x="56" y="45" width="98" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+              <text x="105" y="66" text-anchor="middle">the work,</text><text x="105" y="83" text-anchor="middle">not keywords</text>
+              <rect x="162" y="45" width="98" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+              <text x="211" y="66" text-anchor="middle">matched on</text><text x="211" y="83" text-anchor="middle">what they did</text>
+              <rect x="268" y="45" width="98" height="50" rx="10" fill="#F5F6F3" stroke="#D5D9D4"/>
+              <text x="317" y="66" text-anchor="middle">a person</text><text x="317" y="83" text-anchor="middle">reviews</text>
+              <circle cx="398" cy="70" r="11" fill="#2537D9"/>
+              <text x="398" y="118" text-anchor="end" fill="#1A2AB8">the right fit</text>
+              <rect x="56" y="134" width="310" height="26" rx="13" fill="none" stroke="#C9CEEB" stroke-dasharray="3 4"/>
+              <text x="211" y="151" text-anchor="middle" fill="#4E555D" font-size="12">human judgment first, every step reviewable</text>
+            </g>
+          </svg>
+        </div>
+        <p class="ctx"><span class="dot" aria-hidden="true"></span>For organisations · In development</p>
+        <h3>Unsung Teams</h3>
+        <p>The other side of the table. It looks for the person whose stories fit the role, not just the keywords on the page.</p>
         <ul>
           <li>Roles described as the work, not a list of keywords</li>
           <li>Candidates matched on what they have actually done</li>
-          <li>Human judgment first, every step reviewable</li>
+          <li>A person decides, and every step can be reviewed</li>
         </ul>
-        <p class="soon">In development</p>
-      </div>
+      </article>
     </div>
     <p class="more">Want to try it early? <a href="mailto:rahbar916@gmail.com?subject=Unsung%20early%20access">Email me</a>.</p>
   </div>
@@ -213,7 +255,7 @@
 <section id="papers-short">
   <div class="wrap">
     <h2>Papers</h2>
-    <p class="lede">Six papers on imbalanced data, health, agriculture and smart cities, cited 140 times.</p>
+    <p class="lede">Five papers and an M.Sc. thesis on imbalanced data, health, agriculture and smart cities, cited 140 times.</p>
     <a class="next" href="papers.html"><span class="t">Papers</span><span class="s">Each one in a sentence, with links to read them.</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
@@ -223,7 +265,7 @@
     <h2>On my mind lately</h2>
     <ul class="nowlist">
       <li>Prefill and decode, and the techniques that speed each one up. I want to understand where inference really spends its time, then make it faster.</li>
-      <li>Whether a small model can learn reusable rules from a few dozen examples when a teacher model chooses what it practises. That is Homeroom.</li>
+      <li>Whether a small model can learn reusable rules from a few dozen examples when a teacher model chooses what it practises. That is <a href="work.html#homeroom">Homeroom</a>.</li>
       <li>How to test a model for a risk nobody has written a benchmark for.</li>
     </ul>
     <p class="stamp">Updated November 2026</p>
@@ -243,8 +285,8 @@
 </main>
 
 <footer><div class="wrap"><span>Rahbar Ahsan, Toronto</span><nav aria-label="Pages"><a href="index.html">Home</a><a href="work.html">Work</a><a href="papers.html">Papers</a></nav><span>Views here are my own.</span></div></footer>
-<script src="plot.js"></script>
+<script src="plot.js?v=5"></script>
 <script src="protect.js"></script>
-<script src="stack.js"></script>
+<script src="stack.js?v=2"></script>
 </body>
 </html>
